@@ -12,7 +12,7 @@ createForm.addEventListener('submit', function(e){
 	data.append('title', createTitle.value);
 	data.append('country', createCountry.value);
 	data.append('imageUrl', createImageUrl.value);
-	data.append('text', text.value);
+	data.append('text', text);
 	data.append('description', text.substring(0, text.indexOf('.') +1));
 	data.append('imageFile', createImageFile.files[0]);
 

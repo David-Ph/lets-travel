@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', async function(){
 				<div class="card-body">
 					<h4 class="card-title">${post.title}</h4>
 					<p class="card-text">${post.description}</p>
-					<button class="btn btn-primary">Details</button>
+					<a href="/sydney.html" class="btn btn-primary">Details</a>
 				</div>
 			</div>
 		</div>
@@ -32,5 +32,6 @@ callMeForm.addEventListener('submit', function(e){
 		body: JSON.stringify({
 			phoneNumber: phoneInp.value
 		})
-	}).then((resp) => resp.text()).then(() => alert('We will call you back as soon as possible'));
+	}).then((resp) => resp.text())
+	.then(() => alert('We will call you back as soon as possible'));
 })

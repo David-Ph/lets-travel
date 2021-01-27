@@ -5,7 +5,8 @@ let mongoose = require('mongoose');
 // this is the package to upload file
 let multer = require('multer');
 let postsRouter = require('./routes/posts');
-let callbackRequestsRouter = require('./routes/callback-requests')
+let callbackRequestsRouter = require('./routes/callback-requests');
+let emailsRouter = require('./routes/emails');
 
 mongoose.connect('mongodb://localhost/travels', {useNewUrlParser: true, useUnifiedTopology: true});
 
@@ -22,6 +23,7 @@ app.use(multer({storage: imageStorage }).single('imageFile'));
 app.use(express.static('public'));
 app.use('/posts', postsRouter);
 app.use('/callback-requests', callbackRequestsRouter);
+app.use('/emails', emailsRouter);
 
 //9. to start the server
 app.listen(3000, () => console.log('Listening to 3000....'));
